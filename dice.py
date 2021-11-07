@@ -12,13 +12,18 @@ def roll():
         if count == 0:
             print('Hello welcome to my dice roller! \nChoose between 1 and 10 dice to roll or say quit to exit')
         else :
-            print('Rolling again...\nChoose between 1 and 10 dice to roll or say quit to exit')
+            print('\nRolling again...\n\nChoose between 1 and 10 dice to roll or say quit to exit')
         inp = input('How many would you like to roll?')
         if(inp == 'quit') :
             rolling = False
         else :
             die = []
-            num = int(inp)
+            try :
+                num = int(inp)
+            except:
+                print('Invalid input')
+                count = count + 1
+                continue    
             if(num > 10) :
                 print('Maximum number exceeded')
                 count = count + 1
